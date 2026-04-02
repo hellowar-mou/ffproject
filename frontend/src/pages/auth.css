@@ -1,0 +1,208 @@
+:root{
+  --bg:#1b1b1d;
+  --panel:#2a2a2d;
+  --panel2:#303034;
+  --stroke:#3c3c42;
+  --text:#e9e9ea;
+  --muted:#b8b8be;
+  --accent:#b47a63;
+  --neon:#b5ff6b;
+  --shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+
+.ff-auth {
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 10%, rgba(181,255,107,.10), transparent 35%),
+              radial-gradient(circle at 90% 30%, rgba(180,122,99,.18), transparent 35%),
+              var(--bg);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.ff-authCard{
+  width: min(980px, 100%);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 18px;
+}
+
+.ff-authLeft, .ff-authRight{
+  background: linear-gradient(180deg, #2b2b30, #232327);
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.ff-authLeft{
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ff-authBrand{
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--neon);
+  letter-spacing: 1px;
+}
+
+.ff-authTag{
+  color: var(--muted);
+  font-weight: 700;
+  margin-top: 8px;
+  max-width: 44ch;
+  line-height: 1.35;
+}
+
+.ff-authBadge{
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(181,255,107,.25);
+  background: rgba(0,0,0,.18);
+  color: #dfead6;
+  font-weight: 800;
+}
+
+.ff-authImage{
+  margin-top: 14px;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  display: block;
+}
+
+.ff-authHighlight{
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+  max-width: 260px;
+}
+
+.ff-authPill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(181,255,107,.25);
+  background: rgba(0,0,0,.18);
+  color: #dfead6;
+  font-weight: 800;
+}
+
+.ff-authRight{
+  padding: 22px;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.ff-authTitle{
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.ff-authSub{
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.ff-authForm{
+  margin-top: 6px;
+  display: grid;
+  gap: 10px;
+}
+
+.ff-fieldLabel{
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .3px;
+}
+
+.ff-input{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #4a4a52;
+  background: #3a3a3f;
+  color: var(--text);
+  outline: none;
+}
+
+.ff-input:focus{
+  border-color: rgba(181,255,107,.45);
+  box-shadow: 0 0 0 4px rgba(181,255,107,.10);
+}
+
+.ff-btn{
+  margin-top: 6px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 1000;
+  background: linear-gradient(180deg, #b9806a, #a56f5c);
+  color: #1b1b1d;
+}
+
+.ff-btn:hover{ filter: brightness(1.03); }
+
+.ff-error{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,80,80,.35);
+  background: rgba(255,80,80,.10);
+  color: #ffd2d2;
+  font-weight: 800;
+}
+
+.ff-ok{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(181,255,107,.35);
+  background: rgba(181,255,107,.12);
+  color: #e7ffd1;
+  font-weight: 800;
+}
+
+.ff-authLinkRow{
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.ff-authLinkRow a{
+  color: var(--neon);
+  font-weight: 900;
+  text-decoration: none;
+}
+.ff-authLinkRow a:hover{ text-decoration: underline; }
+
+.ff-linkBtn{
+  border: 0;
+  background: transparent;
+  color: var(--neon);
+  font-weight: 900;
+  cursor: pointer;
+  padding: 0;
+}
+.ff-linkBtn:hover{ text-decoration: underline; }
+
+@media (max-width: 900px){
+  .ff-authCard{ grid-template-columns: 1fr; }
+  .ff-authHighlight{ max-width: 220px; }
+}

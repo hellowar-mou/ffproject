@@ -1,0 +1,7 @@
+ 
+#Node modules
+/frontend/node_modules/
+
+#Large images (food assets)
+/frontend/src/assets/food/
+/backend/node_modules/

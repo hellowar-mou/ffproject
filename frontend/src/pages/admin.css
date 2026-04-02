@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;600;700&display=swap");
+
+:root {
+  --admin-bg: #0f1013;
+  --admin-panel: #1a1b21;
+  --admin-card: #23242c;
+  --admin-accent: #c7ff52;
+  --admin-accent-2: #ffb86b;
+  --admin-text: #f2f2f4;
+  --admin-muted: #a8a8b3;
+  --admin-border: #333442;
+}
+
+.admin {
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 10%, rgba(199, 255, 82, 0.12), transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(255, 184, 107, 0.15), transparent 45%),
+    linear-gradient(180deg, #0c0d10, #14151a 45%, #0f1013 100%);
+  color: var(--admin-text);
+  font-family: "Space Grotesk", sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.admin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.admin-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 20px 80px;
+}
+
+.admin-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  background: rgba(26, 27, 33, 0.8);
+  border: 1px solid var(--admin-border);
+  border-radius: 20px;
+  padding: 22px 26px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+.admin-kicker {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: var(--admin-accent);
+  font-weight: 700;
+}
+
+.admin-title {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin: 6px 0;
+}
+
+.admin-sub {
+  color: var(--admin-muted);
+  font-size: 14px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-btn {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+.admin-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.admin-btnPrimary {
+  background: linear-gradient(135deg, var(--admin-accent), #87ff6a);
+  color: #101010;
+  box-shadow: 0 10px 20px rgba(135, 255, 106, 0.35);
+}
+
+.admin-btnGhost {
+  background: transparent;
+  border-color: var(--admin-border);
+  color: var(--admin-text);
+}
+
+.admin-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.admin-panel {
+  margin-top: 28px;
+  background: rgba(26, 27, 33, 0.85);
+  border: 1px solid var(--admin-border);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.admin-panelTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.admin-panelKicker {
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 11px;
+  color: var(--admin-accent);
+  font-weight: 700;
+}
+
+.admin-panelTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.admin-panelMeta {
+  color: var(--admin-muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.admin-panelBadge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--admin-border);
+  font-size: 12px;
+  color: var(--admin-accent-2);
+  font-weight: 700;
+}
+
+.admin-restaurantList {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.admin-restaurantRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--admin-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.admin-restaurantName {
+  font-weight: 700;
+}
+
+.admin-restaurantMeta {
+  color: var(--admin-muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.admin-btnDanger {
+  background: linear-gradient(135deg, #ff6868, #ff9f7a);
+  color: #1b0e0e;
+  box-shadow: 0 10px 20px rgba(255, 104, 104, 0.25);
+}
+
+.admin-status {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--admin-muted);
+}
+
+.admin-statusError {
+  color: #ff8c8c;
+  font-weight: 700;
+}
+
+.admin-statusMuted {
+  color: var(--admin-muted);
+}
+
+.admin-card {
+  text-align: left;
+  background: var(--admin-card);
+  border: 1px solid var(--admin-border);
+  border-radius: 18px;
+  padding: 18px;
+  color: var(--admin-text);
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(199, 255, 82, 0.18), transparent 45%);
+  opacity: 0.6;
+  transition: opacity 0.18s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(199, 255, 82, 0.5);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.admin-card:hover::after {
+  opacity: 1;
+}
+
+.admin-cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-cardMeta {
+  color: var(--admin-muted);
+  font-size: 13px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-cardCta {
+  margin-top: 14px;
+  font-weight: 700;
+  color: var(--admin-accent-2);
+  position: relative;
+  z-index: 1;
+}
+
+.admin-modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 6, 8, 0.65);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.admin-modal {
+  width: min(640px, 94vw);
+  background: linear-gradient(180deg, #24252d, #1b1c22);
+  border: 1px solid var(--admin-border);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.55);
+  animation: admin-fadeIn 0.25s ease;
+}
+
+@keyframes admin-fadeIn {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.admin-modalTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+}
+
+.admin-modalKicker {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  color: var(--admin-accent);
+  font-weight: 700;
+}
+
+.admin-modalTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  margin-top: 6px;
+}
+
+.admin-modalClose {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--admin-border);
+  background: transparent;
+  color: var(--admin-text);
+  cursor: pointer;
+}
+
+.admin-modalList {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.admin-modalRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.admin-modalLabel {
+  font-weight: 700;
+}
+
+.admin-modalValue {
+  color: var(--admin-accent-2);
+  font-weight: 700;
+}
+
+.admin-modalNote {
+  margin-top: 16px;
+  color: var(--admin-muted);
+  font-size: 14px;
+}
+
+.admin-modalActions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .admin-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
